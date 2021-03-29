@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import bundle from 'bundler';
+import bundle from 'bundler/index';
 import CodeEditor from 'components/code-editor';
 import Preview from 'components/preview';
 import Resizable from 'components/resizable';
@@ -9,13 +9,25 @@ const CodeCell = () => {
     const [code, setCode] = useState('');
     const [input, setInput] = useState('');
 
-    const onClick = async () => {
-        const output = await bundle(input);
-        setCode(output as string);
-    };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            console.log(input);
+            bundle(input)
+                .then(output => {
+                    console.log(output);
+                    if (!output) return;
+                    setCode(output as string);
+                })
+                .catch(err => console.log(err));
+        }, 1000);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, [input]);
 
     return (
-        <Resizable direction='veritcal'>
+        <Resizable direction='vertical'>
             <div
                 style={{
                     height: '100%',
