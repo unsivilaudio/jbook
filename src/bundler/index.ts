@@ -2,7 +2,7 @@ import * as esbuild from 'esbuild-wasm';
 import { unpkgPathPlugin } from 'bundler/plugins/unpkg-path-plugin';
 import { fetchPlugin } from 'bundler/plugins/fetch-plugin';
 
-let service: any;
+let service: boolean;
 
 const bundle = async (rawCode: string) => {
     if (!service)
