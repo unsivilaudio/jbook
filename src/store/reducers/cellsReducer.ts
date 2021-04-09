@@ -56,11 +56,11 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
                 state.order.splice(foundIndex, 0, cell.id);
             }
 
-            return state;
+            return;
         default:
-            return state;
+            return;
     }
-});
+}, initialState);
 
 const randomId = () => {
     return Math.random().toString(36).substr(2, 5);
