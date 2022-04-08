@@ -7,7 +7,6 @@ let service: boolean;
 const bundle = async (rawCode: string) => {
     if (!service)
         await esbuild
-            // @ts-ignore
             .initialize({
                 worker: true,
                 wasmURL: 'https://unpkg.com/esbuild-wasm@0.11.0/esbuild.wasm',
