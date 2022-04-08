@@ -2,10 +2,17 @@
     "name": "@devscribble/local-api",
     "version": "1.0.0",
     "description": "",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
     "main": "dist/index.js",
-    "types": "dist/index.js",
+    "types": "dist/index.d.js",
     "scripts": {
-        "start": "tsc --watch --preserveWatchOutput"
+        "start": "tsc --watch --preserveWatchOutput",
+        "prepublishOnly": "tsc"
     },
     "keywords": [],
     "author": "",

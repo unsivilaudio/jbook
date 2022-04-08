@@ -2,8 +2,16 @@
     "name": "devscribble",
     "version": "1.0.0",
     "description": "",
+    "bin": "dist/index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
     "scripts": {
-        "start": "tsc --watch --preserveWatchOutput"
+        "start": "tsc --watch --preserveWatchOutput",
+        "prepublishOnly": "tsc"
     },
     "keywords": [],
     "author": "",
