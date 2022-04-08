@@ -1,6 +1,6 @@
 {
     "name": "devscribble",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "bin": "dist/index.js",
     "publishConfig": {
@@ -20,7 +20,7 @@
         "@devscribble/local-client": "^1.0.0"
     },
     "devDependencies": {
-        "@devscribble/local-api": "^1.0.0",
+        "@devscribble/local-api": "^1.0.1",
         "@types/node": "^16.6.1",
         "commander": "^8.1.0",
         "esbuild": "0.8.26",
