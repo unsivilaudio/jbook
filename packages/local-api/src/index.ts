@@ -23,7 +23,7 @@ export const serve = (
         );
     } else {
         const packagePath = require.resolve(
-            '@devscribbel/local-client/build/index.html'
+            '@devscribble/local-client/build/index.html'
         );
         app.use(express.static(path.dirname(packagePath)));
     }
